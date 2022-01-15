@@ -1,0 +1,228 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+struct deadspacesavedProfile {
+    struct HEADER{
+        char magic[4];
+        int unknown0;
+        int size;
+        char unknown1[28];
+        wchar_t title[1024];
+        wchar_t slot[1024];
+        wchar_t currentChapter[1024];
+        wchar_t  time[1024];
+    } header <fgcolor=cRed,bgcolor=cBlue>;
+    struct META {
+        char magic[4];
+        int unknown0;
+        int size;
+        wchar_t meta[1024];
+    } meta <fgcolor=cBlack,bgcolor=cWhite>;
+    struct MC02 {
+        char magic[4];
+        int totalSize;
+        int mc02DataSize;
+        int dataSize;
+        char hash0[4];
+        char hash1[4];
+        char hash2[4];
+        char unknown[mc02DataSize];
+    } mc02 <fgcolor=cYellow,bgcolor=cRed>;
+    struct DATA {
+        local int s = 0;
+        int numOfSections;
+        local int i = 0;
+        local int64 unknownHeader;
+        for (i = 0; i < numOfSections; i++) {
+            unknownHeader = ReadInt64();
+            switch(unknownHeader) {
+                case 4033131282:
+                    struct SETTINGS{
+                        char u1[8];
+                        int size0;
+                        float musicVolume;
+                        float voiceVolume;
+                        float sfxVolume;
+                        int subtitle;
+                        float mouseSensitivity;
+                        float u3;
+                        int invertXAxis;
+                        int invertYAxis;
+                        int vibration;
+                        float gamma;
+                        char u4[4];
+                        int resWidth;
+                        int resHight;
+                        int framrate;
+                        int fullscreenMaybe;
+                        int unknown;
+                        int qualityMaybe;
+                    }settings <fgcolor=cBlack,bgcolor=cRed>;
+                    s += sizeof(settings);
+                    break;
+                case 2606639125:
+                    struct GAMEPLAYDATA {
+                        char magic[8];
+                        int size;
+                        int numberOfSections;
+                        local int TrueSize = ((size - 4) / 4);
+                        s+= (12 + size);
+                        struct SAFE {
+                            char magic[24];
+                            int size;
+                            local int TrueSize = size / 28;
+                            char unknown0[8];
+                            struct SAFE_ITEMS {
+                                int unknown0;
+                                char itemMagic[16];
+                                int unknown1;
+                                int quantity;
+                            } items[TrueSize];
+                            char unknown1[4];
+                        } safe <fgcolor=cBlack,bgcolor=cYellow>;
+                        s += sizeof(safe);
+                        struct INVENTORY {
+                            char magic[24];
+                            int size;
+                            local int TrueSize = size / 28;
+                            char unknown[8];
+                            int credits;
+                            struct INVENTORY_ITEMS {
+                                byte itemMagic[16];
+                                int unknown0;
+                                int quantity;
+                                int unknown1;
+                            } items[TrueSize];
+                        } inventroy <fgcolor=cBlack,bgcolor=cRed>;
+                        s += sizeof(inventroy);
+                        struct SHOP {
+                            char magic[24];
+                            int size;
+                            local int TrueSize = size / 20;
+                            char unknown0[8];
+                            int unknown1;
+                            if (size == 4) int empty;
+                            else {
+                                struct SHOPITEMS {
+                                    char itemMagic[16];
+                                    int unknown0;
+                                } items[TrueSize];
+                            }
+                        }shop <fgcolor=cBlack,bgcolor=cGreen>;
+                        s += sizeof(shop);
+                        struct U31 {
+                            char magic[24];
+                            int32 size;
+                            char unknown[8];
+                            local int TrueSize = size / 12;
+                            struct UNKNOWNLIST1 {
+                                char unknownMagic[8];
+                                int unknown;
+                            } unknownList31[TrueSize];
+                        }u31 <fgcolor=cBlack,bgcolor=cWhite>;
+                        s += sizeof(u31);
+                        struct U32 {
+                            char magic[24];
+                            int64 unknown0;
+                            int unknown1;
+                            char padd[4];
+                        }u32 <fgcolor=cRed,bgcolor=cYellow>;
+                        s += sizeof(u32);
+                        struct CHARACTER {
+                            char magic[24];
+                            int64 size;
+                            int unknown;
+                            local int TrueSize = size / 4;
+                            float health;
+                            float air;
+                            float stasis;
+                            int nodes;
+                            char padd[4];
+                        }character <fgcolor=cGreen,bgcolor=cRed>;
+                        s += sizeof(character);
+                        struct U33 {
+                            char magic[24];
+                            int64 size;
+                            int unknown0;
+                            local int TrueSize = size / 4;
+                            int unknown1;
+                        }u33 <fgcolor=cBlack,bgcolor=cGreen>;
+                        s += sizeof(u33);
+                        struct CHAPTERS {
+                            char magic[24];
+                            int64 size;
+                            int unknown;
+                            local int TrueSize = size / 20;
+                            struct CHAPTERDATA {
+                                char unknownMagic[16];
+                                int unknown;
+                            } chapterDataBase[TrueSize];
+                        }chapter1 <fgcolor=cRed,bgcolor=cLtBlue>;
+                        s += sizeof(chapter1);
+                        CHAPTERS chapter3 <fgcolor=cBlack,bgcolor=cWhite>;
+                        s += sizeof(chapter3);
+                        CHAPTERS chapter2 <fgcolor=cBlack,bgcolor=cGreen>;
+                        s += sizeof(chapter2);
+                        CHAPTERS chapter4 <fgcolor=cBlack,bgcolor=cRed>;
+                        s += sizeof(chapter4);
+                        CHAPTERS chapter5 <fgcolor=cBlack,bgcolor=cLtBlue>;
+                        s += sizeof(chapter5);
+                        CHAPTERS chapter6 <fgcolor=cBlack,bgcolor=cYellow>;
+                        s += sizeof(chapter6);
+                        CHAPTERS chapter7 <fgcolor=cBlack,bgcolor=cWhite>;
+                        s += sizeof(chapter7);
+                        CHAPTERS chapter8 <fgcolor=cBlack,bgcolor=cGreen>;
+                        s += sizeof(chapter8);
+                        CHAPTERS chapter9 <fgcolor=cBlack,bgcolor=cRed>;
+                        s += sizeof(chapter9);
+                        CHAPTERS chapter10 <fgcolor=cBlack,bgcolor=cLtBlue>;
+                        s += sizeof(chapter10);
+                        CHAPTERS chapter11 <fgcolor=cBlack,bgcolor=cYellow>;
+                        s += sizeof(chapter11);
+                        CHAPTERS chapter12 <fgcolor=cBlack,bgcolor=cWhite>;
+                        s += sizeof(chapter12);
+                        CHAPTERS training <fgcolor=cBlack,bgcolor=cGreen>;
+                        s += sizeof(training);
+                    }gameplayData;
+                break;
+                default:
+                    struct U0 {
+                        char magic[8];
+                        int size;
+                        int numberOfSections;
+                        if (size == 0) local int TrueSize = 0;
+                        else local int TrueSize = ((size - 4) / 4);
+                        int u0[TrueSize];
+                        s+= (12 + size);
+                    } u0 <optimize=false,fgcolor=cBlack,bgcolor=cGreen>;
+            }
+        }
+        char endPadding [409600 - s];
+    } data <fgcolor=cGreen,bgcolor=cBlue>;
+} profile;
+
+
+
+local int d2h(local int d) {
+    local int t = d;
+    local int t2 = 0;
+    local int t3 = 1;
+    local int t4 = 0;
+    while (t > 0) {
+        t4 = t % 16;
+        t4 *= t3;
+        t2 += t4;
+        t3 *= 10;
+        t /= 16;
+    }
+    return t2;
+}
