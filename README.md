@@ -13,7 +13,7 @@ This project was inspired by [VakhtinAndrey DS2 save editor](https://github.com/
 - Edit Credits, Stasis, Power Nodes, Health, and Air.
 
 ## Notes:
-- Further reverse engineering of the save file is requeired.  
+- Further reverse engineering of the save file is required.  
 You can find 010 Editor Binary Template in repository ([deadspacesaved.bt](https://github.com/malkhal/Dead-Space-PC-Save-Editor/blob/master/deadspacesaved.bt)).
 - Some items are missing.
 - Some Logs are missing.
