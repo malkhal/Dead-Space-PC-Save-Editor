@@ -10,6 +10,8 @@ This project was inspired by [VakhtinAndrey DS2 save editor](https://github.com/
 - Edit inventory items.
 - Edit safe items.
 - Edit database logs.
+- Edit keyitems
+- Edit bench upgrades
 - Edit Credits, Stasis, Power Nodes, Health, and Air.
 
 ## Notes:
@@ -17,3 +19,5 @@ This project was inspired by [VakhtinAndrey DS2 save editor](https://github.com/
 You can find 010 Editor Binary Template in repository ([deadspacesaved.bt](https://github.com/malkhal/Dead-Space-PC-Save-Editor/blob/master/deadspacesaved.bt)).
 - Some items are missing.
 - Some Logs are missing.
+- Most keyitems are missing.
+- some upgrades are missing.
