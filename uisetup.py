@@ -11,6 +11,7 @@ from mainwindow import Ui_mainwindow
 from metadata import MetaData
 from safe import Safe
 from shop import Shop
+from suit import Suit
 from validatesavefile import validateSaveFile
 from writesavefile import writeSaveFile
 from dictionary import itemNameToIdDictionary, dataBaseIdToNameDictionary, dataBaseNameToIdDictionary, keyitemNameToIdDictionary
@@ -73,6 +74,7 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.hexlist = hexlist
         self.inventory = Inventory(hexlist)
         self.character = Character(hexlist)
+        self.suit = Suit(hexlist)
         self.safe = Safe(hexlist)
         self.shop = Shop(hexlist)
         self.database = Database(hexlist)
@@ -145,17 +147,17 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         for i in dataBaseIdToNameDictionary:
             if x < 17: currentChapter = "Training"
             elif x < 35: currentChapter = "Chapter 1"
-            elif x < 53: currentChapter = "Chapter 2"
-            elif x < 66: currentChapter = "Chapter 3"
-            elif x < 85: currentChapter = "Chapter 4"
-            elif x < 100: currentChapter = "Chapter 5"
-            elif x < 113: currentChapter = "Chapter 6"
-            elif x < 125: currentChapter = "Chapter 7"
-            elif x < 134: currentChapter = "Chapter 8"
-            elif x < 144: currentChapter = "Chapter 9"
-            elif x < 161: currentChapter = "Chapter 10"
-            elif x < 171: currentChapter = "Chapter 11"
-            elif x < 181: currentChapter = "Chapter 12"
+            elif x < 54: currentChapter = "Chapter 2"
+            elif x < 67: currentChapter = "Chapter 3"
+            elif x < 86: currentChapter = "Chapter 4"
+            elif x < 101: currentChapter = "Chapter 5"
+            elif x < 114: currentChapter = "Chapter 6"
+            elif x < 126: currentChapter = "Chapter 7"
+            elif x < 135: currentChapter = "Chapter 8"
+            elif x < 145: currentChapter = "Chapter 9"
+            elif x < 162: currentChapter = "Chapter 10"
+            elif x < 172: currentChapter = "Chapter 11"
+            elif x < 182: currentChapter = "Chapter 12"
             self.databaseLogsTable.setItem(x, 0, QtWidgets.QTableWidgetItem(currentChapter))
             self.databaseLogsTable.setItem(x, 1, QtWidgets.QTableWidgetItem(dataBaseIdToNameDictionary[i]))
             checkbox = QtWidgets.QCheckBox()
@@ -255,7 +257,9 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.stasisSpinBox.setValue(int(self.character.stasis))
         self.creditSpinBox.setValue(self.inventory.credit)
         self.nodesSpinBox.setValue(self.character.nodes)
-
+        for i in range(1,7):
+            self.suitLevelComboBox.addItem(str(i))
+            self.suitLevelComboBox.setCurrentIndex(self.suit.suitLevel)
         self.writeSaveFileButton.clicked.connect(self.saveFile)
         
     def itemComboBox(self, x, itemName = "", lastRow = False, isKeyitem = False):
@@ -314,6 +318,7 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.character.stasis = self.stasisSpinBox.value()
         self.character.nodes = self.nodesSpinBox.value()
         self.inventory.credit = self.creditSpinBox.value()
+        self.suit.suitLevel = self.suitLevelComboBox.currentIndex()
         items = []
         for i in range(self.shopTable.rowCount() - 1):
             name = self.shopTable.cellWidget(i,0).currentText()
@@ -404,7 +409,7 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.database.chapter11Logs = chapter11Logs.copy()
         self.database.chapter12Logs = chapter12Logs.copy()
         self.bench.updateUpgradesList(self)
-        backup = writeSaveFile(self.srcFileName, self.hexlist, self.safe, self.inventory, self.shop, self.bench, self.keyitem, self.database, self.character)
+        backup = writeSaveFile(self.srcFileName, self.hexlist, self.safe, self.inventory, self.shop, self.bench, self.keyitem, self.character, self.suit, self.database)
         writeMsg = QtWidgets.QMessageBox()
         writeMsg.setWindowTitle("File Saved")
         writeMsg.setText("File saved\nOld Save Backup:\n{}".format(backup))
