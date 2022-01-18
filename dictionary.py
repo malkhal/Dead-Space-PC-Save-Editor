@@ -27,6 +27,10 @@ itemIdToNameDictionary = {
                     "EA06C84BF7D6D94043454E544B4F5753" : "STASIS PACK",
                     "44B4C7379DBF07864D41594E41524436" : "POWER NODE",
 
+                    #Schematic
+                    "0AC1C830C9AD8E6C4A4F484E534F4E32" : "FLAMETHROWER SCHEMATIC",
+                    "0AC1C830C3E023A14A4F484E534F4E32" : "PULSE ROUNDS SCHEMATIC",
+
                     #Misc
                     "27A7C83031AB8C8E4A4F484E534F4E32" : "GOLD SEMICONDUCTOR",
                     "23A7C830E25BB0CB4A4F484E534F4E32" : "RUBY SEMICONDUCTOR",
@@ -42,8 +46,11 @@ itemIdToNameDictionary = {
                  }
 itemNameToIdDictionary = {item[1]: item[0] for item in itemIdToNameDictionary.items()}
 keyitemIdToNameDictionary = {
-
-                    "E7ABC84B45D129DD43454E544B4F5753" : "DATA BOARD"
+                    "E9ABC84B2E863B6D43454E544B4F5753" : "MAINTENANCE BAY KEY",
+                    "E7ABC84B45D129DD43454E544B4F5753" : "DATA BOARD",
+                    "DF99C8339CCAC9C3504154454C303633" : "THERMITE",
+                    "E199C833A8C20C1A504154454C303633" : "SHOCK PAD",
+                    "4FA9C8367BC4883D504154454C313032" : "THERMITE BOMB"
                   }
 keyitemNameToIdDictionary = {item[1]: item[0] for item in keyitemIdToNameDictionary.items()}
 dataBaseIdToNameDictionary = {
@@ -99,7 +106,7 @@ dataBaseIdToNameDictionary = {
                     "8380C830F026971C4A4F484E534F4E3200000000" : "COLONIST PROBLEMS",
                     "8380C8300603BD724A4F484E534F4E3200000000" : "CODES RECEIVED",
                     "5D89C83022F848604A4F484E534F4E3200000000" : "SHIP GRAVITY ",
-                    #""                                         : "MARKER OVERVIEW",
+                    "7A8BC830A8ABEAE54A4F484E534F4E3200000000" : "MARKER OVERVIEW",
                     "7B8BC830DEAF04714A4F484E534F4E3200000000" : "INTERESTING RESULTS",
                     "7B8BC83073E2BF854A4F484E534F4E3200000000" : "NEWBORNS",
                     "7C8BC8302334542B4A4F484E534F4E3200000000" : "MORE TIME",

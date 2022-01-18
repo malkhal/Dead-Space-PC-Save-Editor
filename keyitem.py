@@ -26,8 +26,8 @@ class Keyitem:
                                    "quantity":readInt32(hexlist, itemOffset + 0x18)})
                 #print(keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset + 0x04, 0x10)])
             except:
-                keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset, 0x10)] = readByteslr(hexlist, itemOffset, 0x10)
-                keyitemNameToIdDictionary[readByteslr(hexlist, itemOffset, 0x10)] = readByteslr(hexlist, itemOffset, 0x10)
+                keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset + 0x04, 0x10)] = readByteslr(hexlist, itemOffset + 0x04, 0x10)
+                keyitemNameToIdDictionary[readByteslr(hexlist, itemOffset + 0x04, 0x10)] = readByteslr(hexlist, itemOffset + 0x04, 0x10)
                 #print(readByteslr(hexlist, itemOffset + 0x04, 0x10))
                 self.items.append({
                                    "unknown0":readInt32(hexlist, itemOffset),

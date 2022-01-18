@@ -30,7 +30,7 @@ class Inventory:
             except:
                 itemIdToNameDictionary[readByteslr(hexlist, itemOffset, 0x10)] = readByteslr(hexlist, itemOffset, 0x10)
                 itemNameToIdDictionary[readByteslr(hexlist, itemOffset, 0x10)] = readByteslr(hexlist, itemOffset, 0x10)
-                #print(readByteslr(hexlist, itemOffset, 0x10))
+                print(readByteslr(hexlist, itemOffset, 0x10))
                 self.items.append({"name":itemIdToNameDictionary[readByteslr(hexlist, itemOffset, 0x10)],
                                    "id":readByteslr(hexlist, itemOffset, 0x10),
                                    "slot":readInt32(hexlist, itemOffset + 0x10), 
