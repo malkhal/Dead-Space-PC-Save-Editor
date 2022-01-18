@@ -1,8 +1,11 @@
+import os
 from PyQt5 import QtCore, QtWidgets
+from bench import Bench
 from character import Character
 from database import Database
 from fileloadedwindow import Ui_fileloadedwindow
 from inventory import Inventory, isWeapon
+from keyitem import Keyitem
 
 from mainwindow import Ui_mainwindow
 from metadata import MetaData
@@ -10,7 +13,7 @@ from safe import Safe
 from shop import Shop
 from validatesavefile import validateSaveFile
 from writesavefile import writeSaveFile
-from dictionary import itemNameToIdDictionary, dataBaseIdToNameDictionary, dataBaseNameToIdDictionary
+from dictionary import itemNameToIdDictionary, dataBaseIdToNameDictionary, dataBaseNameToIdDictionary, keyitemNameToIdDictionary
 
 
 
@@ -31,7 +34,7 @@ class MainWindowUI(Ui_mainwindow):
         self.loadButton.clicked.connect(lambda: self.loadAndValidate(mainwindow))
         self.browseButton.clicked.connect(self.selectFile)
     def selectFile(self):
-        self.saveFilePathLineEdit.setText(QtWidgets.QFileDialog.getOpenFileName()[0])
+        self.saveFilePathLineEdit.setText(QtWidgets.QFileDialog.getOpenFileName(None, "Select Save File", os.path.expanduser('~/Documents/Electronic Arts/Dead Space'))[0])
     def loadAndValidate(self, mainwindow):
         
         try:
@@ -73,8 +76,10 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.safe = Safe(hexlist)
         self.shop = Shop(hexlist)
         self.database = Database(hexlist)
-
-
+        self.bench = Bench(hexlist)
+        self.bench.updateBenchCheckBoxes(self)
+        self.keyitem = Keyitem(hexlist)
+        
         #################################################
         #                Inventory Table                #
         #################################################
@@ -230,6 +235,20 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         for x in range(3): self.databaseLogsTable.resizeColumnToContents(x)
         #################################################
 
+        #################################################
+        #                 Keyitem Table                 #
+        #################################################
+        self.keyitemTable.setRowCount(self.keyitem.trueSize + 1)
+        x = 0
+        for item in self.keyitem.items:
+            combobox = self.itemComboBox(x, item["name"], isKeyitem = True)
+            self.keyitemTable.setCellWidget(x, 0, combobox)
+            x += 1
+        combobox = self.itemComboBox(self.keyitemTable.rowCount() - 1, "", True, isKeyitem = True)
+        self.keyitemTable.setCellWidget(self.keyitemTable.rowCount() - 1, 0, combobox)
+        self.keyitemTable.resizeColumnToContents(0)
+        self.keyitemTable.objectName()
+        #################################################
 
         self.healthSpinBox.setValue(int(self.character.health))
         self.airSpinBox.setValue(int(self.character.air))
@@ -239,10 +258,14 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
 
         self.writeSaveFileButton.clicked.connect(self.saveFile)
         
-    def itemComboBox(self, x, itemName = "", lastRow = False):
+    def itemComboBox(self, x, itemName = "", lastRow = False, isKeyitem = False):
             combobox = MyQComboBox()
-            for item in itemNameToIdDictionary:
-                combobox.addItem(item)
+            if isKeyitem:
+                for item in keyitemNameToIdDictionary:
+                    combobox.addItem(item)
+            else:
+                for item in itemNameToIdDictionary:
+                    combobox.addItem(item)
             if not lastRow: 
                 combobox.addItem("Remove")
                 index = combobox.findText(itemName)
@@ -257,14 +280,16 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         combobox = self.fileloadedwindow.sender()
         table = combobox.parent().parent()
         row = combobox.property('row')
+        iskeyitemc = False
         if row == table.rowCount() - 1:
             newTableSize = table.rowCount() + 1
-            nCombobox = self.itemComboBox(row, combobox.currentText())
+            if table.objectName() == "keyitemTable": iskeyitemc = True
+            nCombobox = self.itemComboBox(row, combobox.currentText(), isKeyitem=iskeyitemc)
             table.removeRow(combobox.property('row'))
             table.setRowCount(newTableSize)
             table.setCellWidget(row, 0, nCombobox)
             if table.columnCount() > 1: table.setItem(row, 1, QtWidgets.QTableWidgetItem("1"))
-            n2Combobox = self.itemComboBox(row + 1, "",True)
+            n2Combobox = self.itemComboBox(row + 1, "",True, isKeyitem=iskeyitemc)
             table.setCellWidget(row + 1, 0, n2Combobox)
             if table.columnCount() > 1: table.setItem(row + 1, 1, QtWidgets.QTableWidgetItem("1"))
             if table.columnCount() > 2:
@@ -327,6 +352,11 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
             itemId = itemNameToIdDictionary[name]
             items.append({"unknown0":0, "name":name, "id":itemId, "unknown1":0, "quantity":quantity})
         self.safe.items = items.copy()
+        for i in range(self.keyitemTable.rowCount() - 1):
+            name = self.keyitemTable.cellWidget(i,0).currentText()
+            itemId = keyitemNameToIdDictionary[name]
+            items.append({"unknown0":0, "name":name, "id":itemId, "unknown1":0, "quantity":1})
+        self.keyitem.items = items.copy()
 
         chapterTrainingLogs = []
         chapter1Logs = []
@@ -373,7 +403,8 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.database.chapter10Logs = chapter10Logs.copy()
         self.database.chapter11Logs = chapter11Logs.copy()
         self.database.chapter12Logs = chapter12Logs.copy()
-        backup = writeSaveFile(self.srcFileName, self.hexlist, self.safe, self.inventory, self.shop, self.database,self.character)
+        self.bench.updateUpgradesList(self)
+        backup = writeSaveFile(self.srcFileName, self.hexlist, self.safe, self.inventory, self.shop, self.bench, self.keyitem, self.database, self.character)
         writeMsg = QtWidgets.QMessageBox()
         writeMsg.setWindowTitle("File Saved")
         writeMsg.setText("File saved\nOld Save Backup:\n{}".format(backup))

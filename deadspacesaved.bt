@@ -39,7 +39,7 @@ struct deadspacesavedProfile {
     } mc02 <fgcolor=cYellow,bgcolor=cRed>;
     struct DATA {
         local int s = 0;
-        int numOfSections;
+        int numOfSections ;
         local int i = 0;
         local int64 unknownHeader;
         for (i = 0; i < numOfSections; i++) {
@@ -71,9 +71,9 @@ struct deadspacesavedProfile {
                     break;
                 case 2606639125:
                     struct GAMEPLAYDATA {
-                        char magic[8];
-                        int size;
-                        int numberOfSections;
+                        char magic[8] ;
+                        int size ;
+                        int numberOfSections ;
                         local int TrueSize = ((size - 4) / 4);
                         s+= (12 + size);
                         struct SAFE {
@@ -100,7 +100,7 @@ struct deadspacesavedProfile {
                                 byte itemMagic[16];
                                 int unknown0;
                                 int quantity;
-                                int unknown1;
+                                int Slot;
                             } items[TrueSize];
                         } inventroy <fgcolor=cBlack,bgcolor=cRed>;
                         s += sizeof(inventroy);
@@ -119,24 +119,31 @@ struct deadspacesavedProfile {
                             }
                         }shop <fgcolor=cBlack,bgcolor=cGreen>;
                         s += sizeof(shop);
-                        struct U31 {
+                        struct BENCH {
                             char magic[24];
                             int32 size;
                             char unknown[8];
                             local int TrueSize = size / 12;
-                            struct UNKNOWNLIST1 {
-                                char unknownMagic[8];
-                                int unknown;
-                            } unknownList31[TrueSize];
-                        }u31 <fgcolor=cBlack,bgcolor=cWhite>;
-                        s += sizeof(u31);
-                        struct U32 {
+                            struct UPGRADESLIST {
+                                char upgradeID[8];
+                                int enabled;
+                            } upgradesList[TrueSize];
+                        }bench <fgcolor=cBlack,bgcolor=cWhite>;
+                        s += sizeof(bench);
+                        struct KEYITEMS {
                             char magic[24];
+                            int size;
                             int64 unknown0;
-                            int unknown1;
-                            char padd[4];
-                        }u32 <fgcolor=cRed,bgcolor=cYellow>;
-                        s += sizeof(u32);
+                            local int TrueSize = size / 28;
+                            struct KEYITEMS_ITEMS {
+                                int unknown0;
+                                char itemMagic[16];
+                                int unknown1;
+                                int quantity;
+                            } items[TrueSize];
+                            char unknown1[4];
+                        }keyItems <fgcolor=cRed,bgcolor=cYellow>;
+                        s += sizeof(keyItems);
                         struct CHARACTER {
                             char magic[24];
                             int64 size;

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>505</width>
-    <height>322</height>
+    <width>583</width>
+    <height>344</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -289,7 +289,7 @@
           <bool>true</bool>
          </property>
          <attribute name="horizontalHeaderVisible">
-          <bool>true</bool>
+          <bool>false</bool>
          </attribute>
          <attribute name="horizontalHeaderCascadingSectionResizes">
           <bool>false</bool>
@@ -317,13 +317,1311 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="databaseLogsTab">
+     <widget class="QWidget" name="benchTab">
       <attribute name="title">
-       <string>Database Logs</string>
+       <string>Bench</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QTableWidget" name="databaseLogsTable">
+        <widget class="QTabWidget" name="tabWidget_2">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="plasmaCutterTab">
+          <attribute name="title">
+           <string>PLASMA CUTTER</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="dmg2PlasmaCutterCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QCheckBox" name="spd2PlasmaCutterCheckBox">
+             <property name="text">
+              <string>SPD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="cap2PlasmaCutterCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QCheckBox" name="dmg3PlasmaCutterCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="cap4PlasmaCutterCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QCheckBox" name="blank7PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QCheckBox" name="cap5PlasmaCutterCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="blank3PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="rel2PlasmaCutterCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="blank1PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="blank5PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QCheckBox" name="blank6PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="dmg1PlasmaCutterCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="blank8PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="4">
+            <widget class="QCheckBox" name="dmg4PlasmaCutterCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QCheckBox" name="cap3PlasmaCutterCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QCheckBox" name="blank4PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QCheckBox" name="spd1PlasmaCutterCheckBox">
+             <property name="text">
+              <string>SPD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QCheckBox" name="blank2PlasmaCutterCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="cap1PlasmaCutterCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="rel1PlasmaCutterCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="lineGunTab">
+          <attribute name="title">
+           <string>LINE GUN</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="5" column="4">
+            <widget class="QCheckBox" name="blank7LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QCheckBox" name="wid2LineGunCheckBox">
+             <property name="text">
+              <string>WID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QCheckBox" name="blank6LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="rel1LineGunCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="dmg2LineGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="blank2LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="3">
+            <widget class="QCheckBox" name="rel2LineGunCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QCheckBox" name="cap2LineGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="4">
+            <widget class="QCheckBox" name="cap4LineGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="6">
+            <widget class="QCheckBox" name="dmg4LineGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QCheckBox" name="blank8LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QCheckBox" name="blank3LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="dmg1LineGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="dmg3LineGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="blank4LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QCheckBox" name="wid1LineGunCheckBox">
+             <property name="text">
+              <string>WID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QCheckBox" name="min1LineGunCheckBox">
+             <property name="text">
+              <string>MIN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QCheckBox" name="cap3LineGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="cap1LineGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="blank1LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QCheckBox" name="blank5LineGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="min2LineGunCheckBox">
+             <property name="text">
+              <string>MIN</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pulseRifleTab">
+          <attribute name="title">
+           <string>PULSE RIFLE</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="blank1PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QCheckBox" name="dmg2PulseRifleCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QCheckBox" name="blank6PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="rel1PulseRifleCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QCheckBox" name="cap5PulseRifleCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="7">
+            <widget class="QCheckBox" name="dmg4PulseRifleCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="dmg1PulseRifleCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QCheckBox" name="cap4PulseRifleCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="cap3PulseRifleCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="cap1PulseRifleCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="blank2PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="blank4PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="cap2PulseRifleCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="blank3PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QCheckBox" name="dmg3PulseRifleCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="blank5PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="rel2PulseRifleCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="6">
+            <widget class="QCheckBox" name="blank7PulseRifleCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="ripperTab">
+          <attribute name="title">
+           <string>RIPPER</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="2" column="6">
+            <widget class="QCheckBox" name="dmg4RipperCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QCheckBox" name="blank4RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="dmg1RipperCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="blank5RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="blank2RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QCheckBox" name="cap3RipperCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="rel1RipperCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="blank3RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="blank7RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="dur2RipperCheckBox">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="blank1RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="cap1RipperCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="cap2RipperCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QCheckBox" name="dmg2RipperCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="rel2RipperCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QCheckBox" name="dur1RipperCheckBox">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QCheckBox" name="blank8RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="5">
+            <widget class="QCheckBox" name="dmg3RipperCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="4">
+            <widget class="QCheckBox" name="blank6RipperCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="6">
+            <widget class="QCheckBox" name="cap4RipperCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="flamethrowerTab">
+          <attribute name="title">
+           <string>FLAMETHROWER</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="10">
+            <widget class="QCheckBox" name="cap5FlamethrowerCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="dmg1FlamethrowerCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="rel2FlamethrowerCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="blank1FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="dur1FlamethrowerCheckBox">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="9">
+            <widget class="QCheckBox" name="cap4FlamethrowerCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="8">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="7">
+            <widget class="QCheckBox" name="blank7FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="rel1FlamethrowerCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="dmg2FlamethrowerCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="cap3FlamethrowerCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="blank3FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="10">
+            <widget class="QCheckBox" name="dmg3FlamethrowerCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="10">
+            <widget class="QCheckBox" name="blank9FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QCheckBox" name="blank5FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="cap2FlamethrowerCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="blank4FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="9">
+            <widget class="QCheckBox" name="dur2FlamethrowerCheckBox">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="blank2FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="blank6FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="cap1FlamethrowerCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="9">
+            <widget class="QCheckBox" name="blank8FlamethrowerCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="contactBeamTab">
+          <attribute name="title">
+           <string>CONTACT BEAM</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_9">
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="cap2ContactBeamCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="blank1ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="blank9ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="dmg1ContactBeamCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="chr1ContactBeamCheckBox">
+             <property name="text">
+              <string>CHR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="7">
+            <widget class="QCheckBox" name="blank12ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="blank4ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="blank8ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QCheckBox" name="blank11ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="blank3ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="cap1ContactBeamCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="blank6ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="blank2ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QCheckBox" name="dmg3ContactBeamCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QCheckBox" name="blank5ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QCheckBox" name="rel1ContactBeamCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QCheckBox" name="blank7ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="blank10ContactBeamCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QCheckBox" name="dmg2ContactBeamCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="6">
+            <widget class="QCheckBox" name="chr2ContactBeamCheckBox">
+             <property name="text">
+              <string>CHR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="7">
+            <widget class="QCheckBox" name="cap3ContactBeamCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="forceGunTab">
+          <attribute name="title">
+           <string>FORCE GUN</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="6">
+            <widget class="QCheckBox" name="dmg5ForceGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="dmg1ForceGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="cap1ForceGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="blank2ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QCheckBox" name="rel2ForceGunCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="blank4ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QCheckBox" name="dmg4ForceGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="rel1ForceGunCheckBox">
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="spd1ForceGunCheckBox">
+             <property name="text">
+              <string>SPD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="dmg2ForceGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="cap2ForceGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="cap3ForceGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="blank5ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="cap4ForceGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QCheckBox" name="blank7ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="blank1ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="dmg3ForceGunCheckBox">
+             <property name="text">
+              <string>DMG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QCheckBox" name="blank3ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="spd2ForceGunCheckBox">
+             <property name="text">
+              <string>SPD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="blank6ForceGunCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="6">
+            <widget class="QCheckBox" name="cap5ForceGunCheckBox">
+             <property name="text">
+              <string>CAP</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="rigTab">
+          <attribute name="title">
+           <string>RIG</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="air1RigCheckBox">
+             <property name="text">
+              <string>AIR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="air2RigCheckBox">
+             <property name="text">
+              <string>AIR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="air3RigCheckBox">
+             <property name="text">
+              <string>AIR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="blank1RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="blank2RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="blank3RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="blank4RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="blank5RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="blank6RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QCheckBox" name="blank7RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="7">
+            <widget class="QCheckBox" name="blank8RigCheckBox">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="hp1RigCheckBox">
+             <property name="text">
+              <string>HP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QCheckBox" name="hp2RigCheckBox">
+             <property name="text">
+              <string>HP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="hp3RigCheckBox">
+             <property name="text">
+              <string>HP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="7">
+            <widget class="QCheckBox" name="hp4RigCheckBox">
+             <property name="text">
+              <string>HP</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="stasisModuleTab">
+          <attribute name="title">
+           <string>STASIS MODULE</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="blank2StasisModule">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="eng3StasisModule">
+             <property name="text">
+              <string>ENG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QCheckBox" name="blank3StasisModule">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="blank1StasisModule">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="dur2StasisModule">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QCheckBox" name="eng2StasisModule">
+             <property name="text">
+              <string>ENG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QCheckBox" name="blank5StasisModule">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QCheckBox" name="blank4StasisModule">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="dur1StasisModule">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="eng1StasisModule">
+             <property name="text">
+              <string>ENG</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="dur3StasisModule">
+             <property name="text">
+              <string>DUR</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="kinesisModuleTab">
+          <attribute name="title">
+           <string>KINESIS MODULE</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="keyitemTab">
+      <attribute name="title">
+       <string>Keyitem</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QTableWidget" name="keyitemTable">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
            <horstretch>0</horstretch>
@@ -350,17 +1648,7 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Chapter</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Log</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Enabled</string>
+           <string>Item</string>
           </property>
          </column>
         </widget>
@@ -581,6 +1869,56 @@
          <property name="maximum">
           <number>999</number>
          </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="databaseLogsTab">
+      <attribute name="title">
+       <string>Database Logs</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QTableWidget" name="databaseLogsTable">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="autoScroll">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Chapter</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Log</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Enabled</string>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>

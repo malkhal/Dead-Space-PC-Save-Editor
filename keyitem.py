@@ -1,13 +1,12 @@
-from typing import Pattern
-from common import *
-from dictionary import *
+from common import readBytesList, readByteslr, readInt32, searchForBytePattern, writeBytes, writeInt32
+from dictionary import keyitemIdToNameDictionary, keyitemNameToIdDictionary
 
-class Safe:
+class Keyitem:
     def __init__(self, hexlist):
         self.magic = ['00', '00', '00', '00', '00', '00',
                       '00', '00', '00', '00', '00', '00',
-                      '00', '00', '00', '00', '71', '5F',
-                      '41', '96', 'FF', 'FF', 'FF', 'FF']
+                      '00', '00', '00', '00', '57', '69',
+                      'A5', 'D6', 'FF', 'FF', 'FF', 'FF']
         self.offset = searchForBytePattern(hexlist, self.magic)
         self.sizeAddress = self.offset + 0x18
         self.size = readInt32(hexlist, self.sizeAddress)
@@ -17,25 +16,27 @@ class Safe:
         self.items = []
         for x in range(0, self.trueSize):
             itemOffset = self.offset + 0x24 + (x * 0x1C)
-            #print(readByteslr(hexlist,itemOffset + 0x04, 0x10))
+            #print(readByteslr(hexlist, itemOffset + 0x04, 0x10))
             try:
-                self.items.append({"unknown0":readInt32(hexlist, itemOffset), 
-                                   "name":itemIdToNameDictionary[readByteslr(hexlist,itemOffset + 0x04, 0x10)],
-                                   "id":readByteslr(hexlist,itemOffset + 0x04, 0x10), 
+                self.items.append({
+                                   "unknown0":readInt32(hexlist, itemOffset),
+                                   "name":keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset + 0x04, 0x10)],
+                                   "id":readByteslr(hexlist, itemOffset + 0x04, 0x10),
                                    "unknown1":readInt32(hexlist, itemOffset + 0x14), 
                                    "quantity":readInt32(hexlist, itemOffset + 0x18)})
-                #print(itemIdDictionary[readByteslr(hexlist,itemOffset + 0x04, 0x10)])
+                #print(keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset + 0x04, 0x10)])
             except:
-                itemIdToNameDictionary[readByteslr(hexlist,itemOffset + 0x04, 0x10)] = readByteslr(hexlist, itemOffset + 0x04, 0x10)
-                itemNameToIdDictionary[readByteslr(hexlist,itemOffset + 0x04, 0x10)] = readByteslr(hexlist, itemOffset + 0x04, 0x10)
-                #print(readByteslr(hexlist,itemOffset + 0x04, 0x10))
-                self.items.append({"unknown0":readInt32(hexlist, itemOffset), 
-                                   "name":itemIdToNameDictionary[readByteslr(hexlist,itemOffset + 0x04, 0x10)],
-                                   "id":readByteslr(hexlist,itemOffset + 0x04, 0x10), 
+                keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset, 0x10)] = readByteslr(hexlist, itemOffset, 0x10)
+                keyitemNameToIdDictionary[readByteslr(hexlist, itemOffset, 0x10)] = readByteslr(hexlist, itemOffset, 0x10)
+                #print(readByteslr(hexlist, itemOffset + 0x04, 0x10))
+                self.items.append({
+                                   "unknown0":readInt32(hexlist, itemOffset),
+                                   "name":keyitemIdToNameDictionary[readByteslr(hexlist, itemOffset + 0x04, 0x10)],
+                                   "id":readByteslr(hexlist, itemOffset + 0x04, 0x10),
                                    "unknown1":readInt32(hexlist, itemOffset + 0x14), 
                                    "quantity":readInt32(hexlist, itemOffset + 0x18)})
         self.unknown1Address = self.offset + self.size + 0x20
-        self.unknown1 = readBytesList(hexlist, self.unknown1Address, 0x04)
+        self.unknown1 = readInt32(hexlist, self.unknown1Address)
 
     def writeData(self, hexlist, offset):
         writeBytes(self.magic ,hexlist, offset, 0x18, True)
@@ -59,10 +60,6 @@ class Safe:
             writeInt32(i["quantity"] , hexlist, offset)
             offset += 4
         self.unknown1Address = offset
-        writeBytes(self.unknown1, hexlist, self.unknown1Address, 0x04, True)
+        writeInt32(self.unknown1, hexlist, self.unknown1Address)
         offset += 0x04
         return offset
-
-
-        
-        

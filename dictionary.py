@@ -41,6 +41,11 @@ itemIdToNameDictionary = {
 
                  }
 itemNameToIdDictionary = {item[1]: item[0] for item in itemIdToNameDictionary.items()}
+keyitemIdToNameDictionary = {
+
+                    "E7ABC84B45D129DD43454E544B4F5753" : "DATA BOARD"
+                  }
+keyitemNameToIdDictionary = {item[1]: item[0] for item in keyitemIdToNameDictionary.items()}
 dataBaseIdToNameDictionary = {
                     #CHTRA
                     "37A0C835BF6160A34D4154485553373700000000" : "MOVEMENT TRAINING",

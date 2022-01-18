@@ -4,7 +4,7 @@ from common import readInt32
 from hash import hashData
 
 
-def writeSaveFile(srcFileName, hexlist, safe, inventory, shop, database, character):
+def writeSaveFile(srcFileName, hexlist, safe, inventory, shop, bench, keyitem, database, character):
     
     output = ['00'] * 0x066CC8
     inputPos = 0
@@ -54,20 +54,19 @@ def writeSaveFile(srcFileName, hexlist, safe, inventory, shop, database, charact
             inputPos += 0x18
             inputPos += readInt32(hexlist, inputPos) + 0x0C
             outputPos = shop.writeData(output, outputPos)
-            output[outputPos:outputPos + 0x18] = hexlist[inputPos:inputPos + 0x18]
+            inputPos += 0x18
+            inputPos += readInt32(hexlist, inputPos) + 0x0C
+            outputPos = bench.writeData(output, outputPos)
+            inputPos += 0x18
+            inputPos += readInt32(hexlist, inputPos) + 0x0C
+            outputPos = keyitem.writeData(output, outputPos)
+            """output[outputPos:outputPos + 0x18] = hexlist[inputPos:inputPos + 0x18]
             inputPos += 0x18
             outputPos += 0x18
             unknownDataSize = readInt32(hexlist, inputPos) + 0x0C
             output[outputPos:outputPos + unknownDataSize] = hexlist[inputPos:inputPos + unknownDataSize]
             inputPos += unknownDataSize
-            outputPos += unknownDataSize
-            output[outputPos:outputPos + 0x18] = hexlist[inputPos:inputPos + 0x18]
-            inputPos += 0x18
-            outputPos += 0x18
-            unknownDataSize = readInt32(hexlist, inputPos) + 0x0C
-            output[outputPos:outputPos + unknownDataSize] = hexlist[inputPos:inputPos + unknownDataSize]
-            inputPos += unknownDataSize
-            outputPos += unknownDataSize
+            outputPos += unknownDataSize"""
             inputPos += 0x18
             inputPos += readInt32(hexlist, inputPos) + 0x0C
             outputPos = character.writeData(output, outputPos)
