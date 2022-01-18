@@ -357,6 +357,7 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
             itemId = itemNameToIdDictionary[name]
             items.append({"unknown0":0, "name":name, "id":itemId, "unknown1":0, "quantity":quantity})
         self.safe.items = items.copy()
+        items = []
         for i in range(self.keyitemTable.rowCount() - 1):
             name = self.keyitemTable.cellWidget(i,0).currentText()
             itemId = keyitemNameToIdDictionary[name]
