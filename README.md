@@ -12,7 +12,7 @@ This project was inspired by [VakhtinAndrey DS2 save editor](https://github.com/
 - Edit database logs.
 - Edit keyitems
 - Edit bench upgrades
-- Edit Credits, Stasis, Power Nodes, Health, and Air.
+- Edit Credits, Stasis, Power Nodes, Health, Air, and suit level.
 
 ## Notes:
 - Further reverse engineering of the save file is required.  
