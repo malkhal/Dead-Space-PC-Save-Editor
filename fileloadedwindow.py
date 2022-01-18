@@ -1006,7 +1006,7 @@ class Ui_fileloadedwindow(object):
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.tabWidget)
 
         self.retranslateUi(fileloadedwindow)
-        self.tabWidget.setCurrentIndex(5)
+        self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(fileloadedwindow)
 

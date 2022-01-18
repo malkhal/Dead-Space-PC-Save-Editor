@@ -156,14 +156,14 @@ struct deadspacesavedProfile {
                             char padd[4];
                         }character <fgcolor=cGreen,bgcolor=cRed>;
                         s += sizeof(character);
-                        struct U33 {
+                        struct SUITLEVEL {
                             char magic[24];
-                            int64 size;
-                            int unknown0;
+                            int size;
+                            int64 unknown;
                             local int TrueSize = size / 4;
-                            int unknown1;
-                        }u33 <fgcolor=cBlack,bgcolor=cGreen>;
-                        s += sizeof(u33);
+                            int suitLevel;
+                        }SuitLevel <fgcolor=cBlack,bgcolor=cGreen>;
+                        s += sizeof(SuitLevel);
                         struct CHAPTERS {
                             char magic[24];
                             int64 size;
@@ -210,7 +210,7 @@ struct deadspacesavedProfile {
                         else local int TrueSize = ((size - 4) / 4);
                         int u0[TrueSize];
                         s+= (12 + size);
-                    } u0 <optimize=false,fgcolor=cBlack,bgcolor=cGreen>;
+                    } u0 <optimize=false,fgcolor=cBlack,bgcolor=cRed>;
             }
         }
         char endPadding [409600 - s];
