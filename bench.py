@@ -180,18 +180,23 @@ class Bench:
         if "F5FC338805E56CCF01000000" in self.upgrades: Ui_fileloadedwindow.dmg4ForceGunCheckBox.setChecked(True)
         if "F5FC338806E56CCF01000000" in self.upgrades: Ui_fileloadedwindow.dmg5ForceGunCheckBox.setChecked(True)
         # endregion
+        # region KENISIS MODULE
+        if "94FA4621FD29E91601000000" in self.upgrades: Ui_fileloadedwindow.rng1KinesisModuleCheckBox.setChecked(True)
+        if "94FA462175555ECD01000000" in self.upgrades: Ui_fileloadedwindow.rng2KinesisModuleCheckBox.setChecked(True)
+        if "94FA462176555ECD01000000" in self.upgrades: Ui_fileloadedwindow.rng3KinesisModuleCheckBox.setChecked(True)
+        # endregion
         # region STASIS MODULE
-        if "A95EB0C9BC6B6C1C01000000" in self.upgrades: Ui_fileloadedwindow.blank1StasisModule.setChecked(True)
-        if "A95EB0C9E88CCD8201000000" in self.upgrades: Ui_fileloadedwindow.eng2StasisModule.setChecked(True)
-        if "A95EB0C934CB157A01000000" in self.upgrades: Ui_fileloadedwindow.dur1StasisModule.setChecked(True)
-        if "A95EB0C9396C6E1C01000000" in self.upgrades: Ui_fileloadedwindow.blank4StasisModule.setChecked(True)
-        if "A95EB0C9FB6B6D1C01000000" in self.upgrades: Ui_fileloadedwindow.blank2StasisModule.setChecked(True)
-        if "A95EB0C94AAD7DBD01000000" in self.upgrades: Ui_fileloadedwindow.eng1StasisModule.setChecked(True)
-        if "A95EB0C9796C6F1C01000000" in self.upgrades: Ui_fileloadedwindow.blank5StasisModule.setChecked(True)
-        if "A95EB0C9FE0191D601000000" in self.upgrades: Ui_fileloadedwindow.dur3StasisModule.setChecked(True)
-        if "A95EB0C93B6C6E1C01000000" in self.upgrades: Ui_fileloadedwindow.blank3StasisModule.setChecked(True)
-        if "A95EB0C94BAD7DBD01000000" in self.upgrades: Ui_fileloadedwindow.eng3StasisModule.setChecked(True)
-        if "A95EB0C9FF0191D601000000" in self.upgrades: Ui_fileloadedwindow.dur2StasisModule.setChecked(True)
+        if "A95EB0C9BC6B6C1C01000000" in self.upgrades: Ui_fileloadedwindow.blank1StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C9E88CCD8201000000" in self.upgrades: Ui_fileloadedwindow.eng2StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C934CB157A01000000" in self.upgrades: Ui_fileloadedwindow.dur1StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C9396C6E1C01000000" in self.upgrades: Ui_fileloadedwindow.blank4StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C9FB6B6D1C01000000" in self.upgrades: Ui_fileloadedwindow.blank2StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C94AAD7DBD01000000" in self.upgrades: Ui_fileloadedwindow.eng1StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C9796C6F1C01000000" in self.upgrades: Ui_fileloadedwindow.blank5StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C9FE0191D601000000" in self.upgrades: Ui_fileloadedwindow.dur3StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C93B6C6E1C01000000" in self.upgrades: Ui_fileloadedwindow.blank3StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C94BAD7DBD01000000" in self.upgrades: Ui_fileloadedwindow.eng3StasisModuleCheckBox.setChecked(True)
+        if "A95EB0C9FF0191D601000000" in self.upgrades: Ui_fileloadedwindow.dur2StasisModuleCheckBox.setChecked(True)
         # endregion
         # region RIG
         if "B0018C38B235768701000000" in self.upgrades: Ui_fileloadedwindow.blank1RigCheckBox.setChecked(True)
@@ -371,18 +376,23 @@ class Bench:
         if Ui_fileloadedwindow.dmg4ForceGunCheckBox.isChecked(): self.upgrades.append("F5FC338805E56CCF01000000")
         if Ui_fileloadedwindow.dmg5ForceGunCheckBox.isChecked(): self.upgrades.append("F5FC338806E56CCF01000000")
         # endregion
+        # region KENISIS MODULE
+        if Ui_fileloadedwindow.rng1KinesisModuleCheckBox.isChecked(): self.upgrades.append("94FA4621FD29E91601000000")
+        if Ui_fileloadedwindow.rng2KinesisModuleCheckBox.isChecked(): self.upgrades.append("94FA462175555ECD01000000")
+        if Ui_fileloadedwindow.rng3KinesisModuleCheckBox.isChecked(): self.upgrades.append("94FA462176555ECD01000000")
+        # endregion
         # region STASIS MODULE
-        if Ui_fileloadedwindow.blank1StasisModule.isChecked(): self.upgrades.append("A95EB0C9BC6B6C1C01000000")
-        if Ui_fileloadedwindow.eng2StasisModule.isChecked(): self.upgrades.append("A95EB0C9E88CCD8201000000")
-        if Ui_fileloadedwindow.dur1StasisModule.isChecked(): self.upgrades.append("A95EB0C934CB157A01000000")
-        if Ui_fileloadedwindow.blank4StasisModule.isChecked(): self.upgrades.append("A95EB0C9396C6E1C01000000")
-        if Ui_fileloadedwindow.blank2StasisModule.isChecked(): self.upgrades.append("A95EB0C9FB6B6D1C01000000")
-        if Ui_fileloadedwindow.eng1StasisModule.isChecked(): self.upgrades.append("A95EB0C94AAD7DBD01000000")
-        if Ui_fileloadedwindow.blank5StasisModule.isChecked(): self.upgrades.append("A95EB0C9796C6F1C01000000")
-        if Ui_fileloadedwindow.dur3StasisModule.isChecked(): self.upgrades.append("A95EB0C9FE0191D601000000")
-        if Ui_fileloadedwindow.blank3StasisModule.isChecked(): self.upgrades.append("A95EB0C93B6C6E1C01000000")
-        if Ui_fileloadedwindow.eng3StasisModule.isChecked(): self.upgrades.append("A95EB0C94BAD7DBD01000000")
-        if Ui_fileloadedwindow.dur2StasisModule.isChecked(): self.upgrades.append("A95EB0C9FF0191D601000000")
+        if Ui_fileloadedwindow.blank1StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9BC6B6C1C01000000")
+        if Ui_fileloadedwindow.eng2StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9E88CCD8201000000")
+        if Ui_fileloadedwindow.dur1StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C934CB157A01000000")
+        if Ui_fileloadedwindow.blank4StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9396C6E1C01000000")
+        if Ui_fileloadedwindow.blank2StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9FB6B6D1C01000000")
+        if Ui_fileloadedwindow.eng1StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C94AAD7DBD01000000")
+        if Ui_fileloadedwindow.blank5StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9796C6F1C01000000")
+        if Ui_fileloadedwindow.dur3StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9FE0191D601000000")
+        if Ui_fileloadedwindow.blank3StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C93B6C6E1C01000000")
+        if Ui_fileloadedwindow.eng3StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C94BAD7DBD01000000")
+        if Ui_fileloadedwindow.dur2StasisModuleCheckBox.isChecked(): self.upgrades.append("A95EB0C9FF0191D601000000")
         # endregion
         # region RIG
         if Ui_fileloadedwindow.blank1RigCheckBox.isChecked(): self.upgrades.append("B0018C38B235768701000000")
