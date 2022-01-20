@@ -6,18 +6,14 @@ Save files are located in "\Documents\EA Games\Dead Space".
 This project was inspired by [VakhtinAndrey DS2 save editor](https://github.com/VakhtinAndrey/Dead-Space-2-PC-Save-Editor).
 
 ## Key Features
-- Edit shop items.
-- Edit inventory items.
-- Edit safe items.
-- Edit database logs.
-- Edit keyitems
-- Edit bench upgrades
-- Edit Credits, Stasis, Power Nodes, Health, Air, and suit level.
+- Edit Shop items.
+- Edit Inventory items.
+- Edit Safe items.
+- Edit Database logs.
+- Edit keyitems.
+- Edit Bench upgrades.
+- Edit Credits, Stasis, Power Nodes, Health, Air, and Suit Level.
 
 ## Notes:
 - Further reverse engineering of the save file is required.  
 You can find 010 Editor Binary Template in repository ([deadspacesaved.bt](https://github.com/malkhal/Dead-Space-PC-Save-Editor/blob/master/deadspacesaved.bt)).
-- Some items are missing.
-- Some Logs are missing.
-- Most keyitems are missing.
-- some upgrades are missing.
