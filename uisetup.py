@@ -259,7 +259,7 @@ class FileLoadedWindowUI(Ui_fileloadedwindow):
         self.nodesSpinBox.setValue(self.character.nodes)
         for i in range(1,7):
             self.suitLevelComboBox.addItem(str(i))
-            self.suitLevelComboBox.setCurrentIndex(self.suit.suitLevel)
+        self.suitLevelComboBox.setCurrentIndex(self.suit.suitLevel)
         self.writeSaveFileButton.clicked.connect(self.saveFile)
         
     def itemComboBox(self, x, itemName = "", lastRow = False, isKeyitem = False):
